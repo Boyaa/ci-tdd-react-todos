@@ -18,6 +18,14 @@ describe('<TodoList />', () => {
         const {getByText} = render(<TodoList todos={sampleTodos} />);
         getByText(sampleTodos[0].text);
         getByText(sampleTodos[1].text);
+    });
+
+    it('calls onToggle and onRemove', () => {
+        const onToggle = jest.fn();
+        const onRemove = jest.fn();
+        const { getByText, getByAllText } = render(<TodoList todos={samepleTodos}
+            onToggle={onToggle} onRemove={onRemove} />);
+        
     })
 
 });
